@@ -6,7 +6,7 @@ public class IntLinkedList {
     /**
      * Error return value
      */
-    public static final int EMPTY_VALUE = -1;
+    private static final int EMPTY_VALUE = -1;
     private Node last;
     private int i;
     /**
