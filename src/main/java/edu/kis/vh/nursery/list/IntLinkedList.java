@@ -7,8 +7,8 @@ public class IntLinkedList {
      * Error return value
      */
     public static final int EMPTY_VALUE = -1;
-    Node last;
-    int i;
+    private Node last;
+    private int i;
     /**
      *Add i  value to Linked List
      * @param i int value to add to the listed List
