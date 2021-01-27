@@ -8,7 +8,6 @@ public class IntLinkedList {
      */
     private static final int EMPTY_VALUE = -1;
     private Node last;
-    private int i;
     /**
      *Add i  value to Linked List
      * @param i int value to add to the listed List
@@ -57,7 +56,7 @@ public class IntLinkedList {
         return ret;
     }
     private class Node {
-         int value;
+         final int value;
          Node prev;
          Node next;
         public Node(int i) {
