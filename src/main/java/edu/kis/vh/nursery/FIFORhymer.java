@@ -1,8 +1,20 @@
 package edu.kis.vh.nursery;
+
+import edu.kis.vh.nursery.intStructures.IntArrayStack;
+import edu.kis.vh.nursery.intStructures.IntLinkedList;
+
 //kombinacja alt + <- w Intellij zmienia kartę z wcześniej otwartym plikiem
 public class FIFORhymer extends DefaultCountingOutRhymer {
+//    private final DefaultCountingOutRhymer temp = new DefaultCountingOutRhymer(new IntLinkedList());
+    private final DefaultCountingOutRhymer temp = new DefaultCountingOutRhymer(new IntArrayStack());
 
-    private final DefaultCountingOutRhymer temp = new DefaultCountingOutRhymer();
+    public FIFORhymer(IntArrayStack stack) {
+        super(stack);
+    }
+
+    public FIFORhymer() {
+        super();
+    }
 
     @Override
     public int countOut() {

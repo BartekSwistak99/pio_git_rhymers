@@ -1,5 +1,6 @@
 package edu.kis.vh.nursery;
 
+import edu.kis.vh.nursery.intStructures.IntArrayStack;
 import edu.kis.vh.nursery.intStructures.IntListInterface;
 import org.junit.Assert;
 import org.junit.Test;
@@ -30,10 +31,11 @@ public class RhymersJUnitTest {
 
     @Test
     public void testIsFull() {
-        DefaultCountingOutRhymer rhymer = new DefaultCountingOutRhymer();
-//        final int STACK_CAPACITY = 12;
-        for (int i = 0; i < rhymer.getStackCapacity(); i++) {
+        DefaultCountingOutRhymer rhymer = new DefaultCountingOutRhymer(new IntArrayStack());
+
+        for (int i = 0; i < IntArrayStack.NUMBERS_SIZE; i++) {
             boolean result = rhymer.isFull();
+           System.out.println(i+" "+result);
             Assert.assertFalse(result);
             rhymer.countIn(888);
         }

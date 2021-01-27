@@ -9,6 +9,7 @@ public class IntLinkedList implements IntListInterface {
      *Add i  value to Linked List
      * @param i int value to add to the listed List
      */
+    @Override
     public void push(int i) {
         if (last == null)
             last = new Node(i);
@@ -22,7 +23,7 @@ public class IntLinkedList implements IntListInterface {
      * Check if list is empty
      * @return true  if list is empty, false otherwise
      */
-
+    @Override
     public boolean isEmpty() {
         return last == null;
     }
@@ -38,6 +39,7 @@ public class IntLinkedList implements IntListInterface {
      * return last value of list
      * @return last value
      */
+    @Override
     public int top() {
         if (isEmpty())
             return EMPTY_VALUE;
@@ -47,6 +49,7 @@ public class IntLinkedList implements IntListInterface {
      * return last value of list and remove it
      * @return last value
      */
+    @Override
     public int pop() {
         if (isEmpty())
             return EMPTY_VALUE;

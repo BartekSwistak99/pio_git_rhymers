@@ -2,11 +2,12 @@ package edu.kis.vh.nursery.intStructures;
 
 public class IntArrayStack implements IntListInterface {
 
+    public static final int NUMBERS_SIZE = 12;
+    private static final int NO_MORE_NUMBERS = 0;
+    private static final int FULL_VALUE = NUMBERS_SIZE -1;
 
-    private static final int NUMBERS_SIZE = 12;
-    private static final int NO_MORE_NUMBERS = -1;
-    private static final int FULL_VALUE = NUMBERS_SIZE - 1;
     private final int[] numbers = new int[NUMBERS_SIZE];
+    //Test isFull() failed
     private int total = EMPTY_VALUE;
 
 
@@ -14,32 +15,32 @@ public class IntArrayStack implements IntListInterface {
         return total;
     }
 
-
-    public int getStackCapacity() {
-        return NUMBERS_SIZE;
-    }
-
-    public void countIn(int in) {
+    @Override
+    public void push(int in) {
         if (!isFull())
             numbers[++total] = in;
     }
-
-    public boolean callCheck() {
+    @Override
+    public boolean isEmpty() {
         return total == EMPTY_VALUE;
     }
 
+
+    //Test isFull() failed
     @Override
     public boolean isFull() {
         return total == FULL_VALUE;
     }
-    public int peekaboo() {
-        if (callCheck())
+    @Override
+
+    public int top() {
+        if (isEmpty())
             return NO_MORE_NUMBERS;
         return numbers[total];
     }
-
-    public int countOut() {
-        if (callCheck())
+    @Override
+    public int pop() {
+        if (isEmpty())
             return NO_MORE_NUMBERS;
         return numbers[total--];
     }

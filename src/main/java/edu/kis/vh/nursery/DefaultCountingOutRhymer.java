@@ -1,11 +1,12 @@
 package edu.kis.vh.nursery;
 
 import edu.kis.vh.nursery.intStructures.IntArrayStack;
+import edu.kis.vh.nursery.intStructures.IntListInterface;
 
 public class DefaultCountingOutRhymer {
-    private IntArrayStack stack;
+    private IntListInterface stack;
 
-    public DefaultCountingOutRhymer(IntArrayStack stack) {
+    public DefaultCountingOutRhymer(IntListInterface stack) {
         this.stack = stack;
     }
 
@@ -13,20 +14,12 @@ public class DefaultCountingOutRhymer {
         this.stack = new IntArrayStack();
     }
 
-    public int getTotal() {
-        return stack.getTotal();
-    }
-
-    public int getStackCapacity() {
-        return stack.getStackCapacity();
-    }
-
     public void countIn(int in) {
-        stack.countIn(in);
+        stack.push(in);
     }
 
     public boolean callCheck() {
-        return stack.callCheck();
+        return stack.isEmpty();
     }
 
     public boolean isFull() {
@@ -34,65 +27,10 @@ public class DefaultCountingOutRhymer {
     }
 
     public int peekaboo() {
-        return stack.peekaboo();
+        return stack.top();
     }
 
     public int countOut() {
-        return stack.countOut();
+        return stack.pop();
     }
 }
-
-
-
-
-
-
-
-
-
-
-//package edu.kis.vh.nursery;
-//
-//public class DefaultCountingOutRhymer {
-//
-//    public  static final int EMPTY_VALUE = -1;
-//    private static final int NUMBERS_SIZE = 12;
-//    private static final int NO_MORE_NUMBERS = -1;
-//    private static final int FULL_VALUE = NUMBERS_SIZE - 1;
-//    private final int[] numbers = new int[NUMBERS_SIZE];
-//    private int total = EMPTY_VALUE;
-//
-//    public int getTotal() {
-//        return total;
-//    }
-//
-//    public int getStackCapacity() {
-//        return NUMBERS_SIZE;
-//    }
-//
-//    public void countIn(int in) {
-//        if (!isFull())
-//            numbers[++total] = in;
-//    }
-//
-//    public boolean callCheck() {
-//        return total == EMPTY_VALUE;
-//    }
-//
-//    public boolean isFull() {
-//        return total == FULL_VALUE;
-//    }
-//
-//    protected int peekaboo() {
-//        if (callCheck())
-//            return NO_MORE_NUMBERS;
-//        return numbers[total];
-//    }
-//
-//    public int countOut() {
-//        if (callCheck())
-//            return NO_MORE_NUMBERS;
-//        return numbers[total--];
-//    }
-//
-//}
