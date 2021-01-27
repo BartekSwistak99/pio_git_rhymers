@@ -1,12 +1,9 @@
-package edu.kis.vh.nursery.list;
+package edu.kis.vh.nursery.intStructures;
+
 /**
  * Linked list of integer values
  */
-public class IntLinkedList {
-    /**
-     * Error return value
-     */
-    private static final int EMPTY_VALUE = -1;
+public class IntLinkedList implements IntListInterface {
     private Node last;
     /**
      *Add i  value to Linked List
@@ -25,6 +22,7 @@ public class IntLinkedList {
      * Check if list is empty
      * @return true  if list is empty, false otherwise
      */
+
     public boolean isEmpty() {
         return last == null;
     }
@@ -32,6 +30,7 @@ public class IntLinkedList {
      * Check if Linked List is full
      * @return true or false if list is full
      */
+    @Override
     public boolean isFull() {
         return false;
     }

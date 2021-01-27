@@ -1,5 +1,6 @@
 package edu.kis.vh.nursery;
 
+import edu.kis.vh.nursery.intStructures.IntListInterface;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -46,7 +47,7 @@ public class RhymersJUnitTest {
         DefaultCountingOutRhymer rhymer = new DefaultCountingOutRhymer();
 
         int result = rhymer.peekaboo();
-        Assert.assertEquals(IntArrayStack.EMPTY_VALUE, result);
+        Assert.assertEquals(IntListInterface.EMPTY_VALUE, result);
 
         int testValue = 4;
         rhymer.countIn(testValue);
@@ -62,7 +63,7 @@ public class RhymersJUnitTest {
 
         DefaultCountingOutRhymer rhymer = new DefaultCountingOutRhymer();
         int result = rhymer.countOut();
-        Assert.assertEquals(IntArrayStack.EMPTY_VALUE, result);
+        Assert.assertEquals(IntListInterface.EMPTY_VALUE, result);
 
         int testValue = 4;
         rhymer.countIn(testValue);
@@ -70,7 +71,7 @@ public class RhymersJUnitTest {
         result = rhymer.countOut();
         Assert.assertEquals(testValue, result);
         result = rhymer.countOut();
-        Assert.assertEquals(IntArrayStack.EMPTY_VALUE, result);
+        Assert.assertEquals(IntListInterface.EMPTY_VALUE, result);
     }
 
 }
